@@ -3,6 +3,7 @@ package dev.plum.moviereviewplatform.movie;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 @Data
 @NoArgsConstructor
@@ -10,5 +11,6 @@ import lombok.NoArgsConstructor;
 public class Imdb {
     private Double rating;
     private Integer votes;
-    private Integer id;
+    @Field("id")
+    private Integer uniqueNum;
 }

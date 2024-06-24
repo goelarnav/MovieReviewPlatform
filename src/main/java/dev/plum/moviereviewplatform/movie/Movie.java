@@ -37,4 +37,8 @@ public class Movie {
     private Integer numMflixComments;
     private List<String> writers;
 
+//    public Double getImdbRating(){
+//        return this.imdb.getRating();
+//    }
+
 }
