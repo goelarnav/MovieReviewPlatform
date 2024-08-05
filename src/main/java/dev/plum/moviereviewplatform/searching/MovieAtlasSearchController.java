@@ -28,13 +28,13 @@ public class MovieAtlasSearchController {
     }
     //calls service layer to perform the actual search
     
-    @ExceptionHandler(EntityNotFoundException.class)
+    @ExceptionHandler(EntityNotFoundException.class) //404
     @ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "MongoDB didn't find any document.")
     public final void handleNotFoundExceptions(EntityNotFoundException e) {
         LOGGER.info("=> Movie not found: {}", e.toString());
     }
     
-    @ExceptionHandler(RuntimeException.class)
+    @ExceptionHandler(RuntimeException.class) //500
     @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR, reason = "Internal Server Error")
     public final void handleAllExceptions(RuntimeException e) {
         LOGGER.error("=> Internal server error.", e);
