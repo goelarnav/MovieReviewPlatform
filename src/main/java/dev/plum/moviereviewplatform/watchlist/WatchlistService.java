@@ -39,7 +39,7 @@ public class WatchlistService {
             newWatchlist.getMovieList().add(movieId);
             savedWatchlist = watchlistRepository.save(newWatchlist);
         }
-
+//uri is to set the location of the newly saved watchlist
         URI locationOfNewWatchlist = ucb.path("/api/v1/watchlist/{watchlistId}").buildAndExpand(savedWatchlist.getId()).toUri();
 
         return ResponseEntity.created(locationOfNewWatchlist).build();
